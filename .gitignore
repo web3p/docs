@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+/_site
+*.gem
+.sass-cache
+Gemfile.lock

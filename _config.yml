@@ -1,0 +1,32 @@
+title: web3p
+subtitle: Decentralize the world
+description: >- # this means to ignore newlines until "baseurl:"
+  This is website for web3p library documentation, including web3.php
+  ethereum-tx, rlp.
+author: Peter Lai
+email: alk03073135@gmail.com
+avatar: assets/images/logo.png
+
+baseurl: ""
+url: "https://www.web3p.xyz" # the base hostname & protocol for your site
+
+# Social settings
+# Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
+twitter_url:
+facebook_url:
+googleplus_url:
+instagram_url:
+linkedin_url:
+github_url:
+stackoverflow_url:
+pinterest_url:
+slack_url:
+dribbble_url:
+
+# Google Analytics Tracking ID goes here:
+google_analytics:
+
+# The following settings are NECESSARY for the Prologue theme to run:
+# theme: jekyll-theme-prologue
+remote_theme: chrisbobbe/jekyll-theme-prologue
+collections: [sections]
