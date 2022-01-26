@@ -1,0 +1,1055 @@
+---
+layout: page
+title: TypeTransaction
+icon: fa-sticky-note
+order: 7
+---
+
+<section class="phpdocumentor-element -namespace">
+    <h6 class="phpdocumentor-content__title">
+TypeTransaction
+
+<span class="phpdocumentor-element__implements">
+    implements
+                    <abbr title="\ArrayAccess">ArrayAccess</abbr>                    </span>
+</span>
+
+
+</h6>
+
+<aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">30</span>
+
+    </aside>
+
+            <p class="phpdocumentor-summary">It's a base transaction for generating/serializing ethereum type transaction (EIP1559/EIP2930).</p>
+
+    <section class="phpdocumentor-description"><p>Only use this class to generate new type transaction</p>
+</section>
+
+
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">author</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Peter Lai <a href="mailto:alk03073135@gmail.com">alk03073135@gmail.com</a></p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">link</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://www.web3p.xyz"> https://www.web3p.xyz </a>
+                    
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">filesource</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>https://github.com/web3p/ethereum-tx</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+
+
+
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><abbr title="\ArrayAccess">ArrayAccess</abbr></dt>
+        <dd></dd>
+    
+    
+    </dl>
+
+
+<h3 id="toc">
+    Table of Contents
+    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+                <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_attributeMap">$attributeMap</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Attribute map for keeping order of transaction key/value</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_privateKey">$privateKey</a>
+    <span>
+                &nbsp;: <abbr title="\Elliptic\EC\KeyPair">KeyPair</abbr>            </span>
+</dt>
+<dd>Private key instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_rlp">$rlp</a>
+    <span>
+                &nbsp;: <abbr title="\Web3p\RLP\RLP">RLP</abbr>            </span>
+</dt>
+<dd>RLP encoding instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_secp256k1">$secp256k1</a>
+    <span>
+                &nbsp;: <abbr title="\Elliptic\EC">EC</abbr>            </span>
+</dt>
+<dd>secp256k1 elliptic curve instance</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_transactionType">$transactionType</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>Transaction type</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_txData">$txData</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>Raw transaction data</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="ethereumtx_TypeTransaction.html#property_util">$util</a>
+    <span>
+                &nbsp;: <abbr title="\Web3p\EthereumUtil\Util">Util</abbr>            </span>
+</dt>
+<dd>Ethereum util instance</dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method___construct">__construct()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>construct</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method___get">__get()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Return the value in the transaction with given key or return the protected property value if get(property_name} function is existed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method___set">__set()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Set the value in the transaction with given key or return the protected value if set(property_name} function is existed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method___toString">__toString()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Return hash of the ethereum transaction without signature.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_getFromAddress">getFromAddress()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Recover from address with given signature (r, s, v) if didn't set from.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_getTxData">getTxData()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Return raw ethereum transaction data.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_hash">hash()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Return hash of the ethereum transaction with/without signature.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_offsetExists">offsetExists()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Return whether the value is in the transaction with given key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_offsetGet">offsetGet()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Return the value in the transaction with given key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_offsetSet">offsetSet()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Set the value in the transaction with given key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_offsetUnset">offsetUnset()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Unset the value in the transaction with given key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_serialize">serialize()</a>
+    <span>
+                        &nbsp;: <abbr title="\Web3p\RLP\RLP\Buffer">Buffer</abbr>    </span>
+</dt>
+<dd>RLP serialize the ethereum transaction.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="ethereumtx_TypeTransaction.html#method_sign">sign()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Sign the transaction with given hex encoded private key.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="ethereumtx_TypeTransaction.html#method_isTransactionTypeValid">isTransactionTypeValid()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Return whether transaction type is valid (0x0 &lt;= $transactionType &lt;= 0x7f).</dd>
+
+        </dl>
+
+
+
+        
+
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="ethereumtx_TypeTransaction.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_attributeMap">
+        $attributeMap
+        <a href="ethereumtx_TypeTransaction.html#property_attributeMap" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">37</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Attribute map for keeping order of transaction key/value</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$attributeMap</span>
+     = <span class="phpdocumentor-signature__default-value">['from' =&gt; ['key' =&gt; -1], 'chainId' =&gt; ['key' =&gt; 0], 'nonce' =&gt; ['key' =&gt; 1, 'length' =&gt; 32, 'allowLess' =&gt; true, 'allowZero' =&gt; false], 'gasPrice' =&gt; ['key' =&gt; 2, 'length' =&gt; 32, 'allowLess' =&gt; true, 'allowZero' =&gt; false], 'gasLimit' =&gt; ['key' =&gt; 3, 'length' =&gt; 32, 'allowLess' =&gt; true, 'allowZero' =&gt; false], 'gas' =&gt; ['key' =&gt; 3, 'length' =&gt; 32, 'allowLess' =&gt; true, 'allowZero' =&gt; false], 'to' =&gt; ['key' =&gt; 4, 'length' =&gt; 20, 'allowZero' =&gt; true], 'value' =&gt; ['key' =&gt; 5, 'length' =&gt; 32, 'allowLess' =&gt; true, 'allowZero' =&gt; false], 'data' =&gt; ['key' =&gt; 6, 'allowLess' =&gt; true, 'allowZero' =&gt; true], 'v' =&gt; ['key' =&gt; 7, 'allowZero' =&gt; true], 'r' =&gt; ['key' =&gt; 8, 'length' =&gt; 32, 'allowZero' =&gt; true], 's' =&gt; ['key' =&gt; 9, 'length' =&gt; 32, 'allowZero' =&gt; true]]</span></code>
+
+    
+    
+    
+
+</article>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_privateKey">
+        $privateKey
+        <a href="ethereumtx_TypeTransaction.html#property_privateKey" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Private key instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Elliptic\EC\KeyPair">KeyPair</abbr></span>
+    <span class="phpdocumentor-signature__name">$privateKey</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_rlp">
+        $rlp
+        <a href="ethereumtx_TypeTransaction.html#property_rlp" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">112</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">RLP encoding instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Web3p\RLP\RLP">RLP</abbr></span>
+    <span class="phpdocumentor-signature__name">$rlp</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_secp256k1">
+        $secp256k1
+        <a href="ethereumtx_TypeTransaction.html#property_secp256k1" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">119</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">secp256k1 elliptic curve instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Elliptic\EC">EC</abbr></span>
+    <span class="phpdocumentor-signature__name">$secp256k1</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_transactionType">
+        $transactionType
+        <a href="ethereumtx_TypeTransaction.html#property_transactionType" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">140</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Transaction type</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$transactionType</span>
+     = <span class="phpdocumentor-signature__default-value">'00'</span></code>
+
+    
+    
+    
+
+</article>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_txData">
+        $txData
+        <a href="ethereumtx_TypeTransaction.html#property_txData" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">105</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Raw transaction data</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$txData</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+</article>
+                    <article class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="property_util">
+        $util
+        <a href="ethereumtx_TypeTransaction.html#property_util" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">133</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Ethereum util instance</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><abbr title="\Web3p\EthereumUtil\Util">Util</abbr></span>
+    <span class="phpdocumentor-signature__name">$util</span>
+    </code>
+
+    
+    
+    
+
+</article>
+            </section>
+
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="ethereumtx_TypeTransaction.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="ethereumtx_TypeTransaction.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">148</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">construct</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$txData</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$txData</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            —
+        
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method___get">
+        __get()
+        <a href="ethereumtx_TypeTransaction.html#method___get" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">191</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return the value in the transaction with given key or return the protected property value if get(property_name} function is existed.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>key or protected property name</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            —
+        
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method___set">
+        __set()
+        <a href="ethereumtx_TypeTransaction.html#method___set" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">208</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set the value in the transaction with given key or return the protected value if set(property_name} function is existed.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>key, eg: to</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            —
+        
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method___toString">
+        __toString()
+        <a href="ethereumtx_TypeTransaction.html#method___toString" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">223</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return hash of the ethereum transaction without signature.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__toString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            —
+            <section class="phpdocumentor-description"><p>hex encoded of the transaction</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_getFromAddress">
+        getFromAddress()
+        <a href="ethereumtx_TypeTransaction.html#method_getFromAddress" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">446</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Recover from address with given signature (r, s, v) if didn't set from.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getFromAddress</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            —
+            <section class="phpdocumentor-description"><p>hex encoded ethereum address</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_getTxData">
+        getTxData()
+        <a href="ethereumtx_TypeTransaction.html#method_getTxData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">346</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return raw ethereum transaction data.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getTxData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            —
+            <section class="phpdocumentor-description"><p>raw ethereum transaction data</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_hash">
+        hash()
+        <a href="ethereumtx_TypeTransaction.html#method_hash" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">419</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return hash of the ethereum transaction with/without signature.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">hash</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includeSignature</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$includeSignature</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>hash with signature</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            —
+            <section class="phpdocumentor-description"><p>hex encoded hash of the ethereum transaction</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_offsetExists">
+        offsetExists()
+        <a href="ethereumtx_TypeTransaction.html#method_offsetExists" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">300</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return whether the value is in the transaction with given key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">offsetExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>key, eg: to</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            —
+        
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_offsetGet">
+        offsetGet()
+        <a href="ethereumtx_TypeTransaction.html#method_offsetGet" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">331</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return the value in the transaction with given key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">offsetGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>key, eg: to</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            —
+            <section class="phpdocumentor-description"><p>value of the transaction</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_offsetSet">
+        offsetSet()
+        <a href="ethereumtx_TypeTransaction.html#method_offsetSet" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">235</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set the value in the transaction with given key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">offsetSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>key, eg: to</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            —
+        
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_offsetUnset">
+        offsetUnset()
+        <a href="ethereumtx_TypeTransaction.html#method_offsetUnset" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">316</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Unset the value in the transaction with given key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">offsetUnset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>key, eg: to</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            —
+        
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_serialize">
+        serialize()
+        <a href="ethereumtx_TypeTransaction.html#method_serialize" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">367</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">RLP serialize the ethereum transaction.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">serialize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Web3p\RLP\RLP\Buffer">Buffer</abbr></span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\Web3p\RLP\RLP\Buffer">Buffer</abbr></span>
+            —
+            <section class="phpdocumentor-description"><p>serialized ethereum transaction</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -public
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_sign">
+        sign()
+        <a href="ethereumtx_TypeTransaction.html#method_sign" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">389</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sign the transaction with given hex encoded private key.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">sign</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$privateKey</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$privateKey</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>hex encoded private key</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            —
+            <section class="phpdocumentor-description"><p>hex encoded signed ethereum transaction</p>
+</section>
+
+    
+</article>
+                    <article class="phpdocumentor-element
+            -method
+            -protected
+                                                        ">
+    <h4 class="phpdocumentor-element__name" id="method_isTransactionTypeValid">
+        isTransactionTypeValid()
+        <a href="ethereumtx_TypeTransaction.html#method_isTransactionTypeValid" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="ethereum-tx/src/TypeTransaction.php"><a href="ethereumtx_TypeTransaction.html"><abbr title="ethereum-tx/src/TypeTransaction.php">TypeTransaction.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">357</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Return whether transaction type is valid (0x0 &lt;= $transactionType &lt;= 0x7f).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">isTransactionTypeValid</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$transactionType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$transactionType</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            —
+            <section class="phpdocumentor-description"><p>is transaction valid</p>
+</section>
+
+    
+</article>
+            </section>
+
+
+</section>
